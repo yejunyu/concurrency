@@ -1,0 +1,6 @@
+rootProject.name = 'concurrent'
+include 'concurrency'
+include 'web'
+include 'service'
+include 'guavaTest'
+

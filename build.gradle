@@ -1,0 +1,47 @@
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+ext {
+    springbootVersion = '2.1.0.RELEASE'
+    guavaVersion = '29.0-jre'
+    fastjsonVersion = '1.2.73'
+    hutoolVersion = '5.3.10'
+    retrofitVersion = '2.9.0'
+
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies = [
+            'starter-web' : "org.springframework.boot:spring-boot-starter-web:${springbootVersion}",
+            'starter-test': "org.springframework.boot:spring-boot-starter-test:${springbootVersion}",
+            'guava'       : "com.google.guava:guava:${guavaVersion}",
+            'fastjson'    : "com.alibaba:fastjson:${fastjsonVersion}",
+            'hutool'      : "cn.hutool:hutool-all:${hutoolVersion}",
+            'retrofit'    : "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+
+
+    ]
+}
+
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+//    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        maven { url('http://maven.aliyun.com/nexus/content/groups/public/') }
+        mavenCentral()
+    }
+
+
+    sourceCompatibility = 1.8
+
+    dependencies {
+        testCompile rootProject.ext.dependencies['starter-test']
+        compile rootProject.ext.dependencies['hutool']
+        compile rootProject.ext.dependencies['retrofit']
+    }
+}
