@@ -12,18 +12,6 @@ import java.util.Optional;
  */
 public class Main {
     public static void main(String[] args) {
-        A a = null;
-        Map<String, String> stringStringMap = Optional.ofNullable(a.map).orElse(new HashMap<>());
-        stringStringMap.put("1","1");
-        System.out.println(stringStringMap);
-    }
 
-    static class A {
-        String name;
-        Map<String, String> map;
-
-        public A(String name) {
-            this.name = name;
-        }
     }
 }

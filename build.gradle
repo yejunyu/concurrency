@@ -9,17 +9,13 @@ ext {
     retrofitVersion = '2.9.0'
 
 
-    repositories {
-        mavenCentral()
-    }
-
     dependencies = [
             'starter-web' : "org.springframework.boot:spring-boot-starter-web:${springbootVersion}",
             'starter-test': "org.springframework.boot:spring-boot-starter-test:${springbootVersion}",
             'guava'       : "com.google.guava:guava:${guavaVersion}",
             'fastjson'    : "com.alibaba:fastjson:${fastjsonVersion}",
             'hutool'      : "cn.hutool:hutool-all:${hutoolVersion}",
-            'retrofit'    : "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+            'retrofit'    : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
 
 
     ]
