@@ -1,3 +1,5 @@
+import jdk.internal.dynalink.linker.LinkerServices
+
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -37,7 +39,8 @@ subprojects {
 
     dependencies {
         testCompile rootProject.ext.dependencies['starter-test']
-        compile rootProject.ext.dependencies['hutool']
-        compile rootProject.ext.dependencies['retrofit']
+        implementation rootProject.ext.dependencies['hutool']
+        implementation rootProject.ext.dependencies['retrofit']
+        implementation rootProject.ext.dependencies['fastjson']
     }
 }
