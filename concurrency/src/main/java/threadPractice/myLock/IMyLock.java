@@ -1,4 +1,4 @@
-package threadPractice.deadLock;
+package threadPractice.myLock;
 
 import java.util.Collection;
 
