@@ -1,4 +1,4 @@
-package threadPractice;
+package threadPractice.threadPool;
 
 /**
  * @author: YeJunyu

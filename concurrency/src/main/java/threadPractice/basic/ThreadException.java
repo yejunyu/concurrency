@@ -1,4 +1,4 @@
-package threadPractice.exception;
+package threadPractice.basic;
 
 /**
  * @author: YeJunyu

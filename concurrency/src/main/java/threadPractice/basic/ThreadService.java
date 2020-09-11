@@ -1,4 +1,4 @@
-package threadPractice;
+package threadPractice.basic;
 
 import java.util.concurrent.TimeUnit;
 
