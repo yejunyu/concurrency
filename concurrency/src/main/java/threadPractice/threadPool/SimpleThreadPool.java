@@ -84,7 +84,6 @@ public class SimpleThreadPool {
                         }
                     }
                     task = tasks.removeFirst();
-                    tasks.notifyAll();
                 }
                 this.state = WorkState.RUNNING;
                 System.out.println(this.getName() + this.state.name());
