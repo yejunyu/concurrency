@@ -1,7 +1,7 @@
 package test;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,20 +15,28 @@ import java.util.Map;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+
         Request request = new ARequest();
-        Map<String, Object> m1 = new HashMap<>();
-        m1.put("key",request);
-        System.out.println(JSON.toJSONString(m1, SerializerFeature.WriteClassName));
-        Map<String,Request> m2 = new HashMap<>();
-        m2.put("key",request);
-        System.out.println(JSON.toJSONString(m2, SerializerFeature.WriteClassName));
+//        System.out.println("no map: " + mapper.writeValueAsString(request));
+//        Map<String, Object> m1 = new HashMap<>();
+//        m1.put("key", request);
+//        System.out.println(m1);
+//        System.out.println(mapper.writeValueAsString(m1));
+//
+//        Map<String, Request> m2 = new HashMap<>();
+//        m2.put("key", request);
+//        System.out.println(m2);
+//        System.out.println(mapper.writeValueAsString(m2));
+
         MyMap m3 = new MyMap();
-        m3.put("key",request);
-        System.out.println(JSON.toJSONString(m3, SerializerFeature.WriteClassName));
+        m3.put("key", request);
+        System.out.println(m3);
+        System.out.println(mapper.writeValueAsString(m3));
     }
 
-    public static class MyMap extends HashMap {
+    public static class MyMap extends HashMap<String, Request> {
 
     }
 }

@@ -1,6 +1,7 @@
 package test;
 
-import com.alibaba.fastjson.annotation.JSONType;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  * @author: YeJunyu
@@ -8,7 +9,11 @@ import com.alibaba.fastjson.annotation.JSONType;
  * @email: yyyejunyu@gmail.com
  * @date: 2020/11/6
  */
-@JSONType(seeAlso = {ARequest.class, BRequest.class})
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = ARequest.class, name = "A"),
+        @JsonSubTypes.Type(value = BRequest.class, name = "B")
+})
 public interface Request {
 
     String getUrl();
